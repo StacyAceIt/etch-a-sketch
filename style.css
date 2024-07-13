@@ -1,7 +1,9 @@
 body {
     /* 1. Structure and Layout */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -12,11 +14,12 @@ body {
     flex-wrap: wrap;
     width: 640px; /* 16 * 40px */
     height: 640px; /* 16 * 40px */
+    background-image: url('./goofy-duck.png'); /* Change to the path of your image */
+    background-size: cover; /* Ensure the image covers the entire grid item */
+    background-position: center; /* Center the image within the grid item */
 }
 
 .grid-item {
-    width: calc(100% / 16); /* Calculate based on grid size */
-    height: calc(100% / 16); /* Calculate based on grid size */
     /* 2. Visual Styling */
     background: white;
     border: 1px solid black;
@@ -26,5 +29,6 @@ body {
 }
 /* 3. Hover and Focus States */
 .grid-item.hovered {
-    background-color: blue; /* Change to your desired color */
+    opacity: 0;
 }
+
