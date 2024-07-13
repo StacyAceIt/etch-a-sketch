@@ -1,11 +1,19 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    let grid = "";
-    for (let i = 0; i < 16; i++){
-        for (let j = 0; j < 16; j++){
-            grid += "<div class = 'grid-item'></div>"
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("grid-container");
+    const gridSize = 16;
+    
+    container.style.backgroundImage = "url('./goofy-duck.png')";
+    container.style.backgroundSize = "cover";
+    container.style.position = "relative";
+
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            const div = document.createElement("div");
+            div.classList.add("grid-item");
+            div.addEventListener("mouseover", () => {
+                div.style.opacity = "0";
+            });
+            container.appendChild(div);
         }
     }
-
-    const container = document.getElementById("grid-container");
-    container.innerHTML = grid;
 });
