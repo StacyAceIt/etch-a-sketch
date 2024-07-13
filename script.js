@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 div.addEventListener("mouseover", () => {
                     div.classList.add("hovered");
                 });
-                div.addEventListener("mouseout", () => {
-                    div.classList.remove("hovered");
-                });
+
                 container.append(div);
             }
         }
