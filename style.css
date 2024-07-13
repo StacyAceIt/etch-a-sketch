@@ -1,4 +1,5 @@
 body {
+    /* 1. Structure and Layout */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,15 +12,19 @@ body {
     flex-wrap: wrap;
     width: 640px; /* 16 * 40px */
     height: 640px; /* 16 * 40px */
-    position: relative;
 }
 
 .grid-item {
     width: calc(100% / 16); /* Calculate based on grid size */
     height: calc(100% / 16); /* Calculate based on grid size */
+    /* 2. Visual Styling */
     background: white;
     border: 1px solid black;
     box-sizing: border-box;
     opacity: 1;
     transition: opacity 1s;
+}
+/* 3. Hover and Focus States */
+.grid-item.hovered {
+    background-color: blue; /* Change to your desired color */
 }

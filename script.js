@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("grid-container");
     const gridSize = 16;
-    
-    container.style.backgroundImage = "url('./goofy-duck.png')";
-    container.style.backgroundSize = "cover";
-    container.style.position = "relative";
 
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
+            //create an element
             const div = document.createElement("div");
             div.classList.add("grid-item");
             div.addEventListener("mouseover", () => {
-                div.style.opacity = "0";
+                // add hover class
+                div.classList.add("hovered");
             });
-            container.appendChild(div);
+            div.addEventListener("mouseout", () => {
+                // remove hover class
+                div.classList.remove("hovered");
+            });
+            //append to container
+            container.append(div);
         }
     }
 });
