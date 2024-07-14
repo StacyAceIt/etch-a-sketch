@@ -20,11 +20,7 @@ function createGrid(size) {
         }
     }
 }
-
-// Initialize grid
-createGrid(gridSize);
-
-resetButton.addEventListener("click", () => {
+function resetGrid(){
     let newGridSize = prompt("Enter new grid size (max limit 100): ");
     newGridSize = parseInt(newGridSize, 10); 
     if (newGridSize && newGridSize > 0 && newGridSize <= 100) {
@@ -32,5 +28,19 @@ resetButton.addEventListener("click", () => {
     } else {
         alert("Invalid grid size. Please enter a number between 1 and 100.");
     }
+}
+
+// Initialize grid
+createGrid(gridSize);
+
+resetButton.addEventListener("click", resetGrid);
+
+randomButton.addEventListener("click", () => {
+    resetGrid();
+
 });
 
+darkenButton.addEventListener("click", () => {
+    resetGrid();
+    
+});
