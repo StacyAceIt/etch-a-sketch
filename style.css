@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,18 +11,15 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* margin: 0% 20%; */
     width: 640px; /* 16 * 40px */
 }
 
-#button-container{
+#button-container {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-self: center;
     width: 100%;
     margin: 5%;
-    /* height: 100%; */
-    /* gap: 10px; */
 }
 
 #grid-container {
@@ -31,7 +28,7 @@ body{
     background-image: url('./goofy-duck.png'); /* Change to the path of your image */
     background-size: cover; /* Ensure the image covers the entire grid item */
     background-position: center; /* Center the image within the grid item */
-    width: 100%; 
+    width: 100%;
     height: 640px;
 }
 
@@ -40,13 +37,7 @@ body{
     background: white;
     border: 1px solid black;
     box-sizing: border-box;
-    opacity: 1;
     transition: opacity 1s;
 }
-/* 3. Hover and Focus States */
-.grid-item.defaultReset {
-    opacity: 0;
-}
-
 
 

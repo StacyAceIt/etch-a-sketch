@@ -12,13 +12,22 @@ function createGrid(size, hoveringEffect="defaultReset") {
             div.classList.add("grid-item");
             div.style.width = `${100 / size}%`;
             div.style.height = `${100 / size}%`;
-            if (hoveringEffect == "random"){
+            div.style.opacity = 1;
+            div.dataset.interactions = 0;
+            if (hoveringEffect === "random") {
                 div.addEventListener("mouseover", () => {
-                    div.style.backgroundColor = getRandomColor();
-                });               
-            }else{
+                    div.style.backgroundColor = getRandomColor();                   
+                });
+            } else if (hoveringEffect === "darken") {
                 div.addEventListener("mouseover", () => {
-                    div.classList.add(hoveringEffect);
+                    let interactions = parseInt(div.dataset.interactions);
+                    interactions++;
+                    div.dataset.interactions = interactions;
+                    div.style.backgroundColor = `rgba(0, 0, 0, ${interactions / 10})`;
+                });
+            } else {
+                div.addEventListener("mouseover", () => {
+                    div.style.opacity = 0;
                 });
             }
             
@@ -52,6 +61,4 @@ resetButton.addEventListener("click", () => promptUser());
 
 randomButton.addEventListener("click", () => promptUser("random"));
 
-// darkenButton.addEventListener("click", () => {
-
-// });
+darkenButton.addEventListener("click", () => promptUser("darken"));
