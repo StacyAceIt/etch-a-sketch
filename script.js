@@ -1,5 +1,7 @@
 const container = document.getElementById("grid-container");
 const resetButton = document.getElementById("reset-button");
+const randomButton = document.getElementById("random-button");
+const darkenButton = document.getElementById("darken-button");
 const gridSize = 16;
 
 function createGrid(size) {
