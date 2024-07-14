@@ -14,7 +14,7 @@ Welcome to the Etch-a-Sketch project! This project is a browser-based sketchpad 
 
 ## How to Use
 
-1. **Open the Project**: Open the `index.html` file in your browser.
+1. **Open the Project**: Click (https://stacyaceit.github.io/etch-a-sketch/)
 2. **Draw**: Hover over the grid cells to draw.
 3. **Change Grid Size**: Click the "Change Grid Size" button and enter the desired number of squares per side (up to 100).
 4. **Reset Grid**: Click the "Reset Grid" button to clear the grid.
