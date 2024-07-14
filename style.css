@@ -44,7 +44,7 @@ body{
     transition: opacity 1s;
 }
 /* 3. Hover and Focus States */
-.grid-item.hovered {
+.grid-item.defaultReset {
     opacity: 0;
 }
 

@@ -4,7 +4,7 @@ const randomButton = document.getElementById("random-button");
 const darkenButton = document.getElementById("darken-button");
 const gridSize = 16;
 
-function createGrid(size) {
+function createGrid(size, hoveringEffect="defaultReset") {
     container.innerHTML = ""; // Clear existing grid
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
@@ -12,35 +12,46 @@ function createGrid(size) {
             div.classList.add("grid-item");
             div.style.width = `${100 / size}%`;
             div.style.height = `${100 / size}%`;
-            div.addEventListener("mouseover", () => {
-                div.classList.add("hovered");
-            });
+            if (hoveringEffect == "random"){
+                div.addEventListener("mouseover", () => {
+                    div.style.backgroundColor = getRandomColor();
+                });               
+            }else{
+                div.addEventListener("mouseover", () => {
+                    div.classList.add(hoveringEffect);
+                });
+            }
+            
 
             container.append(div);
         }
     }
 }
-function resetGrid(){
+
+function promptUser(hoveringEffect="defaultReset"){
     let newGridSize = prompt("Enter new grid size (max limit 100): ");
     newGridSize = parseInt(newGridSize, 10); 
     if (newGridSize && newGridSize > 0 && newGridSize <= 100) {
-        createGrid(newGridSize);
+        createGrid(newGridSize, hoveringEffect);
     } else {
         alert("Invalid grid size. Please enter a number between 1 and 100.");
     }
 }
 
+function getRandomColor(){
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`
+}
+
 // Initialize grid
 createGrid(gridSize);
 
-resetButton.addEventListener("click", resetGrid);
+resetButton.addEventListener("click", () => promptUser());
 
-randomButton.addEventListener("click", () => {
-    resetGrid();
+randomButton.addEventListener("click", () => promptUser("random"));
 
-});
+// darkenButton.addEventListener("click", () => {
 
-darkenButton.addEventListener("click", () => {
-    resetGrid();
-    
-});
+// });
